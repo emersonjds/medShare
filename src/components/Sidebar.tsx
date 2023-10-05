@@ -413,7 +413,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                       </clipPath>
                     </defs>
                   </svg>
-                  Items Médicos
+                  Itens Médicos
                 </NavLink>
               </li>
               {/* <!-- Menu Item Tables --> */}
