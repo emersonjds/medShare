@@ -3,8 +3,46 @@ import Breadcrumb from '../../components/Breadcrumb';
 import Chair from '../../images/items/cadeira.png'
 import Andador from '../../images/items/andador.png'
 import Muleta from '../../images/items/muleta.png'
-import Bola from '../../images/items/bola.jpeg'
 import Tipoia from '../../images/items/tipoia.png'
+
+const maintenanceItems = [
+  {
+    id: 1,
+    name: 'Cadeira de Rodas',
+    image: Chair,
+    quantity: 5,
+    status: 'Aguardando Peça',
+    responsible: 'Henrique Mello',
+    deliveryTime: 5,
+  },
+  {
+    id: 2,
+    name: 'Andador',
+    image: Andador,
+    quantity: 8,
+    status: 'Em Manutenção',
+    responsible: 'Rodrigo Silva',
+    deliveryTime: 3,
+  },
+  {
+    id: 3,
+    name: 'Muleta',
+    image: Muleta,
+    quantity: 2,
+    status: 'Em Manutenção',
+    responsible: 'Rodrigo Silva',
+    deliveryTime: 2,
+  },
+  {
+    id: 5,
+    name: 'Tipoia',
+    image: Tipoia,
+    quantity: 1,
+    status: 'Em Manutenção',
+    responsible: 'Rodrigo Silva',
+    deliveryTime: 2,
+  }
+]
 
 
 const FormLayout = () => {
@@ -46,135 +84,47 @@ const FormLayout = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-3 border-b border-stroke dark:border-strokedark sm:grid-cols-5">
-
-            <div className="flex items-center gap-3 p-2.5 xl:p-5">
-              <div className="flex-shrink-0">
-                <img
-                  style={{
-                    height: '60px',
-                    width: '60px',
-                  }}
-                  src={Chair} alt="Brand" />
-              </div>
-              <p className="hidden text-black dark:text-white sm:block">Cadeira de Rodas</p>
-            </div>
-
-            <div className="flex items-center justify-center p-2.5 xl:p-5">
-              <p className="text-black dark:text-white">5</p>
-            </div>
-
-            <div className="flex items-center justify-center p-2.5 xl:p-5">
-              <p className="text-meta-6"> Aguardando Peça</p>
-            </div>
-
-            <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
-              <p className="text-black dark:text-white">Henrique Mello</p>
-            </div>
-
-            <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
-              <p className="text-meta-1">5</p>
-            </div>
-
-          </div>
 
           <div className="grid grid-cols-3 border-b border-stroke dark:border-strokedark sm:grid-cols-5">
-            <div className="flex items-center gap-3 p-2.5 xl:p-5">
-              <div className="flex-shrink-0">
-                <img src={Andador} alt="Brand" style={{
-                  height: '60px',
-                  width: '60px',
-                }} />
-              </div>
-              <p className="hidden text-black dark:text-white sm:block">
-                Andador
-              </p>
-            </div>
+            {
+              maintenanceItems.map((item) => {
+                return (
+                  <>
+                    <div className="flex items-center gap-3 p-2.5 xl:p-5">
+                      <div className="flex-shrink-0">
+                        <img
+                          style={{
+                            height: '60px',
+                            width: '60px',
+                          }}
+                          src={item.image} alt="Brand" />
+                      </div>
+                      <p className="hidden text-black dark:text-white sm:block">{item.name}</p>
+                    </div>
 
-            <div className="flex items-center justify-center p-2.5 xl:p-5">
-              <p className="text-black dark:text-white">8</p>
-            </div>
+                    <div className="flex items-center justify-center p-2.5 xl:p-5">
+                      <p className="text-black dark:text-white">{item.quantity}</p>
+                    </div>
 
-            <div className="flex items-center justify-center p-2.5 xl:p-5">
-              <p className="text-meta-3">Em Manutenção</p>
-            </div>
+                    <div className="flex items-center justify-center p-2.5 xl:p-5">
+                      <p className={`${item.status === 'Em Manutenção' ? 'text-meta-3' : 'text-meta-6'}
+                      `} > {item.status}</p>
+                    </div>
 
-            <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
-              <p className="text-black dark:text-white">Rodrigo Silva</p>
-            </div>
+                    <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
+                      <p className="text-black dark:text-white">{item.responsible}</p>
+                    </div>
 
-            <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
-              <p className="text-meta-1">2</p>
-            </div>
+                    <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
+                      <p className="text-meta-1">{item.deliveryTime}</p>
+                    </div>
+                  </>
+                )
+              })
+            }
           </div>
-
-          <div className="grid grid-cols-3 border-b border-stroke dark:border-strokedark sm:grid-cols-5">
-            <div className="flex items-center gap-3 p-2.5 xl:p-5">
-              <div className="flex-shrink-0">
-                <img src={Muleta} alt="Brand"
-                  style={{
-                    height: '60px',
-                    width: '60px',
-                  }}
-                />
-              </div>
-              <p className="hidden text-black dark:text-white sm:block">Muleta</p>
-            </div>
-
-            <div className="flex items-center justify-center p-2.5 xl:p-5">
-              <p className="text-black dark:text-white">3</p>
-            </div>
-
-            <div className="flex items-center justify-center p-2.5 xl:p-5">
-              <p className="text-meta-3">Em Manutenção</p>
-            </div>
-
-            <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
-              <p className="text-black dark:text-white"> Clara Pires</p>
-            </div>
-
-            <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
-              <p className="text-meta-1">3</p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-3 sm:grid-cols-5">
-            <div className="flex items-center gap-3 p-2.5 xl:p-5">
-              <div className="flex-shrink-0">
-                <img src={Tipoia} alt="Brand"
-                  style={{
-                    height: '60px',
-                    width: '60px',
-                  }}
-                />
-              </div>
-              <p className="hidden text-black dark:text-white sm:block">
-                Tipoia
-              </p>
-            </div>
-
-            <div className="flex items-center justify-center p-2.5 xl:p-5">
-              <p className="text-black dark:text-white">2</p>
-            </div>
-
-            <div className="flex items-center justify-center p-2.5 xl:p-5">
-              <p className="text-meta-3">Em Manutenção</p>
-            </div>
-
-            <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
-              <p className="text-black dark:text-white">Gregório Marques</p>
-            </div>
-
-            <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
-              <p className="text-meta-1">1</p>
-            </div>
-          </div>
-
-
         </div>
-
       </div>
-
     </>
   );
 };
