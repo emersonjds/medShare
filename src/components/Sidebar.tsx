@@ -65,29 +65,38 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
         }`}
     >
       {/* <!-- SIDEBAR HEADER --> */}
-      <div className="flex items-center gap-2 px-6 py-5.5 lg:py-6.5 bg-primary flex-direction columns-1">
+      <div className="flex gap-2 px-6 py-5.5 lg:py-6.5 bg-primary flex-column">
         <NavLink to="/">
           {/* <div
             className='text-3xl font-bold text-white'
           >
             MedShare
           </div> */}
+
           <div
-            className='h-16 w-16 items-center flex self-center rounded-full justify-between gap-2'
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+            }}
           >
-            <img src={Logo2} alt="Logo" />
+            <div
+              className='h-16 w-16 items-center flex self-center rounded-full justify-center gap-2'
+            >
+              <img src={Logo2} alt="Logo" />
 
-            {/* /> */}
+              {/* /> */}
 
+            </div>
+            <span className='text-lg font-bold text-white text-center'>
+              MedShare
+            </span>
+            <span
+              className='text-sm font-bold  text-white text-center'
+            >
+              Locação de Equipamentos Médicos
+            </span>
           </div>
-          <span className='text-lg font-bold font-medium text-white text-center'>
-            MedShare
-          </span>
-          <span
-            className='text-sm font-bold font-medium text-white text-center'
-          >
-            Locação de Equipamentos Médicos
-          </span>
+
 
         </NavLink>
 
