@@ -9,7 +9,7 @@ const ChatCard = () => {
   return (
     <div className="col-span-12 rounded-sm border border-stroke bg-white py-6 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-4">
       <h4 className="mb-6 px-7.5 text-xl font-semibold text-black dark:text-white">
-        Chats
+        Chat com Clientes
       </h4>
 
       <div>
@@ -50,9 +50,9 @@ const ChatCard = () => {
 
           <div className="flex flex-1 items-center justify-between">
             <div>
-              <h5 className="font-medium">Henry Fisher</h5>
+              <h5 className="font-medium">Claudia Juscelino</h5>
               <p>
-                <span className="text-sm">I am waiting for you</span>
+                <span className="text-sm">Esta tudo ok com a cadeira</span>
                 <span className="text-xs"> . 5:54 PM</span>
               </p>
             </div>
