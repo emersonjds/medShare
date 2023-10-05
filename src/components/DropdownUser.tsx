@@ -48,7 +48,7 @@ const DropdownUser = () => {
             André Hering
 
           </span>
-          <span className="block text-xs">ADM</span>
+          <span className="block text-xs">Passos Magicos - ADM</span>
         </span>
 
         <span className="h-12 w-12 rounded-full">
