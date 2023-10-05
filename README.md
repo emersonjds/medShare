@@ -8,7 +8,7 @@ Platform for renting medical equipment for low-income people with the aim of hel
 Clone the project
 
 ```bash
-  git clone https://github.com/emersonjds/morada
+  git clone https://github.com/emersonjds/medshare
 ```
 
 Go to the project directory
